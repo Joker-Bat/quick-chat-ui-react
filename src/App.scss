@@ -1,0 +1,20 @@
+@use "./styles/responsive" as M;
+@use "./styles/variables" as V;
+
+.App {
+  width: 100%;
+  max-width: var(--max-width);
+  overflow: hidden;
+  margin: 0 auto;
+  height: 100%;
+  background-color: var(--primary-bg-color);
+  padding: 2rem 0;
+  min-height: var(--100vh);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  @include M.respond(V.$TABLET) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,74 @@
+.Container {
+  width: 100%;
+}
+
+.Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-font-color);
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--secondary-font-color);
+  }
+}
+
+.Activity {
+  width: 100%;
+  height: 160px;
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  .Bar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+
+    &.Active {
+      .Line,
+      .Circle {
+        background-color: var(--primary-theme-color);
+      }
+
+      .Line {
+        height: 40%;
+      }
+    }
+
+    .Line {
+      width: 10px;
+      height: 100%;
+      background-color: var(--primary-theme-color-lighten);
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .Circle {
+      width: 10px;
+      height: 10px;
+      background-color: var(--primary-theme-color-lighten);
+      border-radius: 50%;
+      margin-bottom: 5px;
+      flex-shrink: 0;
+    }
+
+    .Label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--secondary-font-color);
+    }
+  }
+}

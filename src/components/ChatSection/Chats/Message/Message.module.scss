@@ -1,0 +1,80 @@
+.Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .MessageContainer {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    .Message {
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 3px;
+      word-break: break-all;
+    }
+
+    .Timestamp {
+      width: 100%;
+      font-size: 1rem;
+      color: var(--secondary-font-color);
+      font-weight: 500;
+    }
+  }
+
+  .Picture {
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .ActiveFlag {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 8px;
+      height: 8px;
+      background-color: var(--online-color);
+      border-radius: 50%;
+    }
+  }
+
+  &.Sent {
+    justify-content: flex-end;
+
+    .Message {
+      color: var(--white);
+      background-color: var(--send-chat-bg-color);
+    }
+
+    .Timestamp {
+      text-align: right;
+    }
+
+    .Picture {
+      margin-left: 10px;
+    }
+  }
+
+  &.Received {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+
+    .Message {
+      color: var(--secondary-font-color);
+      background-color: var(--received-chat-bg-color);
+    }
+
+    .Picture {
+      margin-right: 10px;
+    }
+  }
+}

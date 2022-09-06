@@ -1,0 +1,50 @@
+.Conversation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+  &.Active {
+    background-color: var(--secondary-bg-color);
+  }
+
+  &:hover {
+    background-color: var(--secondary-bg-color);
+  }
+
+  .Image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .Name {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .NewMessageCount {
+    width: 20px;
+    height: 20px;
+    background-color: var(--notification-color);
+    color: var(--white);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+}

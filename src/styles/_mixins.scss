@@ -1,0 +1,15 @@
+@mixin customScrollbar() {
+  scrollbar-color: var(--primary-theme-color-lighten) var(--white);
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+    opacity: 0.5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 90%;
+    background-color: var(--primary-theme-color-lighten);
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,57 @@
+.Button {
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  border: 1px solid var(--primary-theme-color);
+  background-color: var(--primary-theme-color);
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+  &.Large {
+    font-size: 1.6rem;
+    padding: 1.2rem 2.5rem;
+
+    .Icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.Outlined {
+    background-color: var(--white);
+    color: var(--primary-theme-color);
+  }
+
+  &:hover {
+    background-color: var(--primary-theme-color-darken);
+    color: var(--white);
+
+    .Icon {
+      transform: translateX(3px);
+    }
+  }
+
+  .Title {
+    margin-right: 5px;
+  }
+
+  .Icon {
+    width: 15px;
+    height: 15px;
+    margin-top: -1px;
+    transition: transform 0.1s ease-in-out;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

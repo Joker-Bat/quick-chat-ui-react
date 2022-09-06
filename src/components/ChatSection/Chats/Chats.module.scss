@@ -1,0 +1,29 @@
+.Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.NoConversation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--secondary-font-color);
+    user-select: none;
+  }
+}
+
+.Message {
+  margin-bottom: 20px;
+
+  &:first-child {
+    margin-top: auto;
+  }
+}

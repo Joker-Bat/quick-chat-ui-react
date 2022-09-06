@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.scss";
+
+import { useDispatch } from "react-redux";
+
+import { ChatApp } from "./container/ChatApp";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // To measure correct height on mobile
+    const appHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+    };
+
+    window.addEventListener("resize", appHeight);
+    appHeight();
+
+    return () => {
+      window.removeEventListener("resize", appHeight);
+    };
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChatApp />
     </div>
   );
 }

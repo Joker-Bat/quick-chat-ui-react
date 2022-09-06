@@ -1,0 +1,125 @@
+@use "../../styles/responsive" as M;
+@use "../../styles/variables" as V;
+@use "../../styles/mixins" as M2;
+
+.Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.LeftColumn {
+  width: 100%;
+  min-width: 24rem;
+  max-width: 90%;
+  height: 100%;
+  background-color: var(--primary-bg-color);
+  transition: all 0.2s ease-in-out;
+  flex: 1;
+
+  @include M.respond(V.$TABLET) {
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 10;
+
+    &.Show {
+      transform: translateX(0);
+    }
+  }
+}
+
+.ChatSection {
+  width: 100%;
+  min-width: 38rem;
+  max-height: calc(var(--100vh) - 4rem);
+  height: 100%;
+  background-color: var(--secondary-bg-color);
+  transition: width 0.2s ease-in-out;
+  flex-shrink: 0;
+  flex: 2.5;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .Header {
+    width: 100%;
+    align-items: center;
+    display: none;
+    padding: 1rem 2rem;
+    background-color: var(--primary-theme-color-darken);
+
+    @include M.respond(V.$TABLET) {
+      display: flex;
+      padding: 1rem 2rem;
+    }
+
+    button {
+      width: 25px;
+      height: 25px;
+      appearance: none;
+      border-radius: 50%;
+      border: 1px solid var(--primary-theme-color);
+      background-color: var(--secondary-bg-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      margin-right: 25px;
+      transition: background-color 0.1 ease-in-out, color 0.1 ease-in-out;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        background-color: var(--primary-theme-color);
+        color: var(--white);
+      }
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+
+  @include M.respond(V.$TABLET) {
+    max-height: var(--100vh);
+    border-radius: 0;
+  }
+}
+
+.RightColumn {
+  width: 100%;
+  min-width: 20rem;
+  max-width: 40rem;
+  height: 100%;
+  background-color: var(--primary-bg-color);
+  width: var(--right-column-width);
+  transition: all 0.2s ease-in-out;
+  padding: 0 20px;
+  overflow-y: scroll;
+
+  @include M2.customScrollbar();
+
+  @include M.respond(V.$TABLET) {
+    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    z-index: 10;
+
+    &.Show {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "./styles/responsive";
+@import "./styles/variables";
+
+:root {
+  --primary-theme-color: #0f4cff;
+  --primary-theme-color-darken: #0c43e8;
+  --primary-theme-color-lighten: #d3deff;
+  --primary-font-color: #112840;
+  --secondary-font-color: #37526f;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #f3f6fb;
+  --notification-color: #fc5655;
+  --online-color: #22bb9d;
+  --white: #ffffff;
+  --send-chat-bg-color: #1a233c;
+  --received-chat-bg-color: #ffffff;
+
+  --time-bg-color: #d9e4fd;
+  --time-bg-dark-color: #b2c7ff;
+  --time-color: #0f4cff;
+
+  --attended-bg-color: #e3f6f3;
+  --attended-bg-dark-color: #c7f0ea;
+  --attended-color: #22b99a;
+
+  --meetings-bg-color: #efe8ff;
+  --meetings-bg-dark-color: #d9d3ff;
+  --meetings-color: #6f5cc5;
+
+  --rejected-bg-color: #fff1e8;
+  --rejected-bg-dark-color: #fee1d3;
+  --rejected-color: #fc5321;
+
+  --max-width: 1680px;
+  --100vh: calc(var(--vh, 1vh) * 100);
+  --right-column-width: 35rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  @include respond($TABLET) {
+    cursor: default !important;
+  }
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include respond($TABLET) {
+    font-size: 56.25%;
+  }
+
+  @include respond($MOBILE) {
+    font-size: 50%;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--secondary-bg-color);
+  font-family: "Poppins", sans-serif;
+}
+
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
